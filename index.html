@@ -88,6 +88,36 @@
                         <button type="submit" class="btn btn-primary" id="selectMS3DatabaseTypeSubmitBtn">Submit</button>
                     </div>
                 </form>
+
+                <!-- Check 5P course position -->
+                <form id="P5CoursePosition" class="row row-cols-md-auto g-3 mt-3 d-none">
+                    <div class="col-12 col-md-10">
+                        <label for="selectP5CoursePosition" class="visually-hidden">Which of the following describes
+                            your position in the 5P
+                            course?</label>
+                        <select class="form-select"
+                            aria-label="Which of the following describes your position in the 5P course?"
+                            name="selectP5CoursePosition" id="selectP5CoursePosition">
+                            <option value="blank" selected>Which of the following describes your position in the 5P
+                                course?</option>
+                            <option value="no5PSubmissions">I am working towards my Portfolio Project 1</option>
+                            <option value="submittedPP1">I am working towards my Portfolio Project 2</option>
+                            <option value="submittedPP2">I am working towards my Portfolio Project 3</option>
+                            <option value="submittedPP3">I am working towards my Portfolio Project 4</option>
+                            <option value="submittedPP4eComm">I am working towards my Portfolio Project 5 E-Commerce Applications</option>
+                            <option value="submittedPP4PredAn">I am working towards my Portfolio Project 5 Predictive Analytics</option>
+                            <option value="submittedPP4AdvFE">I am working towards my Portfolio Project 5 Advanced Frontend</option>
+                            <option value="submittedPP5eComm">I have submitted my Portfolio Project 5 E-Commerce Applications but not received my certificate yet</option>
+                            <option value="submittedPP5PredAn">I have submitted my Portfolio Project 5 Predictive Analytics but not received my certificate yet</option>
+                            <option value="submittedPP5AdvFE">I have submitted my Portfolio Project 5 Advanced Frontend but not received my certificate yet</option>
+                            </select>
+                        <p id="P5CoursePositionFormFeedback" class="formFeedback"></p>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <button type="submit" class="btn btn-primary"
+                            id="selectP5CoursePositionSubmitBtn">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
         <a class="btn btn-primary" id="resetBtn">Reset form</a>
@@ -107,11 +137,12 @@
             <!-- Result if action needed -->
             <div id="actionResult" class="col-12 d-none">
                 <h2>What do I need to do?</h2>
-                <p>Ensure you have completed the steps in the following documents <strong>before November 28th:</strong></p>
+                <p>Ensure you have completed the following tasks <strong>before November 28th</strong>.<br>
+                    Click the links to find the relevant steps for each task.</p>
                 <div class="form-check d-none" id="signUpGSPWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="signUpGSP">
                     <label class="form-check-label" for="signUpGSP">
-                        Sign up for the GitHub Student Pack. Search your emails for the subject "Your GitHub Student Pack" for your unique activation code.
+                        Sign up for the GitHub Student Pack. Search your emails for the subject "Your GitHub Student Pack" for your unique activation link.
                     </label>
                 </div>
                 <div class="form-check d-none" id="signUpHerokuCreditsWrapper">

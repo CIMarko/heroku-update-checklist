@@ -2,8 +2,8 @@
 const courseForm = document.getElementById("courseForm");
 const P4CoursePositionForm = document.getElementById("P4CoursePosition");
 const MS3DatabaseTypeForm = document.getElementById("MS3DatabaseTypeForm");
+const P5CoursePositionForm = document.getElementById("P5CoursePosition");
 const resetBtn = document.getElementById("resetBtn");
-let MS3HasPostgres = '';
 
 /**
  * Handles form to select which course the student is on
@@ -17,7 +17,7 @@ function handleCourseForm(event) {
         P4CoursePositionForm.classList.remove("d-none");
         disableCourseForm()
     } else if (course === "5P") {
-        /* Show P5 Course position form (when created ) */
+        P5CoursePositionForm.classList.remove("d-none");
         disableCourseForm()
     } else {
         /* Show feedback that must select an option */
@@ -57,6 +57,47 @@ function handle4PCoursePositionForm(event) {
         /* Show feedback that must select an option */
         document.getElementById("P4CoursePositionFormFeedback").innerHTML = "Please select your position in the 4P course course";
     }
+}
+
+function handleP5CoursePositionForm(event) {
+    event.preventDefault();
+    let form = event.target;
+    let P5CoursePosition = form.selectP5CoursePosition.value;
+    if (P5CoursePosition === "no5PSubmissions") {
+        disableP5CoursePositionForm();
+        showNoActionNeededResult();
+    } else if (P5CoursePosition === "submittedPP1") {
+        disableP5CoursePositionForm();
+        document.getElementById("signUpGSPWrapper").classList.remove("d-none");
+        document.getElementById("actionResult").classList.remove("d-none");
+    } else if (P5CoursePosition === "blank") {
+        document.getElementById("P5CoursePositionFormFeedback").innerHTML = "Please select your position in the 5P course course";
+    } else {
+        disableP5CoursePositionForm();
+        document.getElementById("signUpGSPWrapper").classList.remove("d-none");
+        document.getElementById("signUpHerokuCreditsWrapper").classList.remove("d-none");
+        document.getElementById("convertDynosWrapper").classList.remove("d-none");
+        document.getElementById("actionResult").classList.remove("d-none");
+        if (P5CoursePosition === "submittedPP3") {
+            /* migrate PP4 */
+            document.getElementById("migratePP4Wrapper").classList.remove("d-none");
+            document.getElementById("actionResult").classList.remove("d-none");
+        } else if (P5CoursePosition === "submittedPP4eComm" || P5CoursePosition === "submittedPP5eComm") {
+            /* migrate PP5 ecomm */
+            document.getElementById("migratePP4Wrapper").classList.remove("d-none");
+            document.getElementById("migratePP5EcommWrapper").classList.remove("d-none");
+            document.getElementById("actionResult").classList.remove("d-none");
+        } else if (P5CoursePosition === "submittedPP4AdvFE" || P5CoursePosition === "submittedPP5AdvFE") {
+            // migrate API part of project
+            document.getElementById("migratePP4Wrapper").classList.remove("d-none");
+            document.getElementById("migratePP5DRFWrapper").classList.remove("d-none");
+            document.getElementById("actionResult").classList.remove("d-none");
+        } else if (P5CoursePosition === "submittedPP4PredAn" || P5CoursePosition === "submittedPP5PredAn") {
+            // don't need to migrate PredAn project - no db
+            document.getElementById("migratePP4Wrapper").classList.remove("d-none");
+            document.getElementById("actionResult").classList.remove("d-none");
+        }
+    } 
 }
 
 
@@ -105,6 +146,12 @@ function disableMS3DatabaseTypeForm() {
     document.getElementById("MS3DatabaseTypeFormFeedback").innerHTML = "";
 }
 
+function disableP5CoursePositionForm() {
+    document.getElementById("selectP5CoursePosition").disabled = true;
+    document.getElementById("selectP5CoursePositionSubmitBtn").disabled = true;
+    document.getElementById("P5CoursePositionFormFeedback").innerHTML = "";
+}
+
 
 function showNoActionNeededResult() {
     document.getElementById("noActionNeeded").classList.remove("d-none");
@@ -119,4 +166,5 @@ function resetForm() {
 courseForm.addEventListener("submit", handleCourseForm);
 P4CoursePositionForm.addEventListener("submit", handle4PCoursePositionForm);
 MS3DatabaseTypeForm.addEventListener("submit", handleMS3DatabaseType);
+P5CoursePositionForm.addEventListener("submit", handleP5CoursePositionForm);
 resetBtn.addEventListener("click", resetForm);
