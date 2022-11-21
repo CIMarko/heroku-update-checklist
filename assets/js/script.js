@@ -3,6 +3,7 @@ const courseForm = document.getElementById("courseForm");
 const P4CoursePositionForm = document.getElementById("P4CoursePosition");
 const MS3DatabaseTypeForm = document.getElementById("MS3DatabaseTypeForm");
 const P5CoursePositionForm = document.getElementById("P5CoursePosition");
+const supportBtn = document.getElementById("supportBtn");
 const resetBtn = document.getElementById("resetBtn");
 
 /**
@@ -15,10 +16,10 @@ function handleCourseForm(event) {
     let course = form.selectCourse.value;
     if (course === "4P") {
         P4CoursePositionForm.classList.remove("d-none");
-        disableCourseForm()
+        disableCourseForm();
     } else if (course === "5P") {
         P5CoursePositionForm.classList.remove("d-none");
-        disableCourseForm()
+        disableCourseForm();
     } else {
         /* Show feedback that must select an option */
         document.getElementById("courseFormFeedback").innerHTML = "Please select a course";
@@ -70,7 +71,7 @@ function handleP5CoursePositionForm(event) {
     } else if (P5CoursePosition === "submittedPP1") {
         disableP5CoursePositionForm();
         document.getElementById("signUpGSPWrapper").classList.remove("d-none");
-        showActionResult()
+        showActionResult();
     } else if (P5CoursePosition === "blank") {
         document.getElementById("P5CoursePositionFormFeedback").innerHTML = "Please select your position in the 5P course course";
     } else {
@@ -93,7 +94,7 @@ function handleP5CoursePositionForm(event) {
             // don't need to migrate PredAn project - no db
             document.getElementById("migratePP4Wrapper").classList.remove("d-none");
         }
-        showHerokuTasksInfoText()
+        showHerokuTasksInfoText();
         showActionResult();
     } 
 }
@@ -106,17 +107,17 @@ function handleP5CoursePositionForm(event) {
 function handleMS3DatabaseType(event) {
     event.preventDefault();
     let form = event.target;
-    MS3DatabaseType = form.selectMS3DatabaseType.value;
+    let MS3DatabaseType = form.selectMS3DatabaseType.value;
     if (MS3DatabaseType === "MS3Postgres" || MS3DatabaseType === "MS3PostgresAndMongoDB") {
         disableMS3DatabaseTypeForm();
         document.getElementById("signUpElephantSQLWrapper").classList.remove("d-none");
         document.getElementById("migrateMS3Wrapper").classList.remove("d-none");
-        showHerokuTasksInfoText()
-        showActionResult()
+        showHerokuTasksInfoText();
+        showActionResult();
     } else if (MS3DatabaseType === "MS3MongoDB") {
         disableMS3DatabaseTypeForm();
-        showHerokuTasksInfoText()
-        showActionResult()
+        showHerokuTasksInfoText();
+        showActionResult();
     } else {
         document.getElementById("MS3DatabaseTypeFormFeedback").innerHTML = "Please select the type of database your MS3 uses";
     }
@@ -169,6 +170,11 @@ function showActionResult() {
     window.scrollTo(0,document.body.scrollHeight);
 }
 
+function showSupportInfo() {
+    document.getElementById("supportInfo").classList.remove("d-none");
+    window.scrollTo(0,document.body.scrollHeight);
+}
+
 function resetForm() {
     location.reload(true);
 }
@@ -178,4 +184,5 @@ courseForm.addEventListener("submit", handleCourseForm);
 P4CoursePositionForm.addEventListener("submit", handle4PCoursePositionForm);
 MS3DatabaseTypeForm.addEventListener("submit", handleMS3DatabaseType);
 P5CoursePositionForm.addEventListener("submit", handleP5CoursePositionForm);
+supportBtn.addEventListener("click", showSupportInfo);
 resetBtn.addEventListener("click", resetForm);
