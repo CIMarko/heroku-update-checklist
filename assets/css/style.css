@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --orange: #e84610;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+.formFeedback {
+    color: var(--orange);
+}
+
 #resetBtn {
     position: fixed;
     bottom: 15px;
@@ -5,5 +25,5 @@
 }
 
 .formFeedback {
-    color: red;
+    margin-top: .5rem;
 }
