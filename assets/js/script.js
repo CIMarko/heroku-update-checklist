@@ -11,9 +11,24 @@ function handleCourseForm(event) {
     event.preventDefault();
     let form = event.target;
     let course = form.selectCourse.value;
-    console.log(course);
+    if (course === "4P") {
+        P4CoursePositionForm.classList.remove("d-none");
+        disableCourseForm()
+    } else if (course === "5P") {
+        /* Show P5 Course position form (when created ) */
+        disableCourseForm()
+    } else {
+        /* Show feedback that must select an option */
+        document.getElementById("courseFormFeedback").innerHTML = "Please select a course";
+    }
+
 }
 
+function disableCourseForm() {
+    document.getElementById("selectCourse").disabled = true;
+    document.getElementById("courseFormSubmitBtn").disabled = true;
+    document.getElementById("courseFormFeedback").innerHTML = "";
+}
 
 /**
  * Handles form to select which section of the 4P course the student is on
