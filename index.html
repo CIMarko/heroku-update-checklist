@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon"
+        href="https://lms-juniper-staticfiles-codeinstitute.s3.eu-west-1.amazonaws.com/static/ci-theme/images/favicon.70793afcf85e.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -61,7 +63,7 @@
                             <option value="submittedMS3">I am working towards my Milestone Project 4</option>
                             <option value="submittedMS4">I have submitted my Milestone Project 4 but not received my
                                 certificate yet</option>
-                            </select>
+                        </select>
                         <p id="P4CoursePositionFormFeedback" class="formFeedback"></p>
                     </div>
                     <div class="col-12 col-md-2 mt-0 mt-md-3">
@@ -89,7 +91,8 @@
                         <p id="MS3DatabaseTypeFormFeedback" class="formFeedback"></p>
                     </div>
                     <div class="col-12 col-md-2 mt-0 mt-md-3">
-                        <button type="submit" class="btn btn-primary" id="selectMS3DatabaseTypeSubmitBtn">Select</button>
+                        <button type="submit" class="btn btn-primary"
+                            id="selectMS3DatabaseTypeSubmitBtn">Select</button>
                     </div>
                 </form>
 
@@ -109,13 +112,19 @@
                             <option value="submittedPP1">I am working towards my Portfolio Project 2</option>
                             <option value="submittedPP2">I am working towards my Portfolio Project 3</option>
                             <option value="submittedPP3">I am working towards my Portfolio Project 4</option>
-                            <option value="submittedPP4eComm">I am working towards my Portfolio Project 5 E-Commerce Applications</option>
-                            <option value="submittedPP4PredAn">I am working towards my Portfolio Project 5 Predictive Analytics</option>
-                            <option value="submittedPP4AdvFE">I am working towards my Portfolio Project 5 Advanced Frontend</option>
-                            <option value="submittedPP5eComm">I have submitted my Portfolio Project 5 E-Commerce Applications but not received my certificate yet</option>
-                            <option value="submittedPP5PredAn">I have submitted my Portfolio Project 5 Predictive Analytics but not received my certificate yet</option>
-                            <option value="submittedPP5AdvFE">I have submitted my Portfolio Project 5 Advanced Frontend but not received my certificate yet</option>
-                            </select>
+                            <option value="submittedPP4eComm">I am working towards my Portfolio Project 5 E-Commerce
+                                Applications</option>
+                            <option value="submittedPP4PredAn">I am working towards my Portfolio Project 5 Predictive
+                                Analytics</option>
+                            <option value="submittedPP4AdvFE">I am working towards my Portfolio Project 5 Advanced
+                                Frontend</option>
+                            <option value="submittedPP5eComm">I have submitted my Portfolio Project 5 E-Commerce
+                                Applications but not received my certificate yet</option>
+                            <option value="submittedPP5PredAn">I have submitted my Portfolio Project 5 Predictive
+                                Analytics but not received my certificate yet</option>
+                            <option value="submittedPP5AdvFE">I have submitted my Portfolio Project 5 Advanced Frontend
+                                but not received my certificate yet</option>
+                        </select>
                         <p id="P5CoursePositionFormFeedback" class="formFeedback"></p>
                     </div>
                     <div class="col-12 col-md-2 mt-0 mt-md-3">
@@ -141,19 +150,22 @@
             <!-- Result if action needed -->
             <div id="actionResult" class="col-12 d-none">
                 <h2 class="display-4">What do I need to do?</h2>
-                <p class="herokuTasksInfoText d-none">Ensure you have completed the following tasks <strong>before November 28th</strong>.<br>
+                <p class="herokuTasksInfoText d-none">Ensure you have completed the following tasks <strong>before
+                        November 28th</strong>.<br>
                     Click the links to find the relevant steps for each task.</p>
                 <div class="form-check d-none" id="signUpGSPWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="signUpGSP">
                     <label class="form-check-label" for="signUpGSP">
-                        Sign up for the GitHub Student Pack. Search your emails for the subject "Your GitHub Student Pack" for your unique activation link.
+                        Sign up for the GitHub Student Pack. Search your emails for the subject "Your GitHub Student
+                        Pack" for your unique activation link.
                     </label>
                 </div>
                 <div class="form-check d-none" id="signUpHerokuCreditsWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="signUpHerokuCredits">
                     <label class="form-check-label" for="signUpHerokuCredits">
-                        After your GitHub Student Pack is activated, 
-                        <a href="https://code-institute-students.github.io/applying-heroku-student-credits/" target="_blank">
+                        After your GitHub Student Pack is activated,
+                        <a href="https://code-institute-students.github.io/applying-heroku-student-credits/"
+                            target="_blank">
                             apply for your Heroku Student Credits</a>
                     </label>
                 </div>
@@ -161,53 +173,61 @@
                     <input class="form-check-input" type="checkbox" value="" id="signUpElephantSQL">
                     <label class="form-check-label" for="signUpElephantSQL">
                         <a href="https://code-institute-students.github.io/deployment-docs/02-elephantsql/"
-                            target="_blank">Sign up for ElephantSQL</a> 
+                            target="_blank">Sign up for ElephantSQL</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="migrateMS3Wrapper">
                     <input class="form-check-input" type="checkbox" value="" id="migrateMS3">
                     <label class="form-check-label" for="migrateMS3">
-                        <a id="MS3DocLink" href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
+                        <a id="MS3DocLink"
+                            href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
                             target="_blank">Migrate your Milestone Project 3 database</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="migrateMS4Wrapper">
                     <input class="form-check-input" type="checkbox" value="" id="migrateMS4">
                     <label class="form-check-label" for="migrateMS4">
-                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/" target="_blank">
+                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
+                            target="_blank">
                             Migrate your Milestone Project 4 database</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="migratePP4Wrapper">
                     <input class="form-check-input" type="checkbox" value="" id="migrateMS3">
                     <label class="form-check-label" for="migrateMS3">
-                        <a id="MS3DocLink" href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
+                        <a id="MS3DocLink"
+                            href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
                             target="_blank">Migrate your Portfolio Project 4 database</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="migratePP5EcommWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="migratePP5Ecomm">
                     <label class="form-check-label" for="migratePP5Ecomm">
-                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/" target="_blank">
+                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
+                            target="_blank">
                             Migrate your Portfolio Project 5 E-Commerce Applications database</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="migratePP5DRFWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="migratePP5DRF">
                     <label class="form-check-label" for="migratePP5DRF">
-                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/" target="_blank">
+                        <a href="https://code-institute-students.github.io/deployment-docs/80-migrating-databases-for-heroku/"
+                            target="_blank">
                             Migrate your Portfolio Project 5 Django REST Framework project database</a>
                     </label>
                 </div>
                 <div class="form-check d-none" id="convertDynosWrapper">
                     <input class="form-check-input" type="checkbox" value="" id="convertDynos">
                     <label class="form-check-label" for="convertDynos">
-                        <a href="https://code-institute-students.github.io/deployment-docs/01-heroku-signup/heroku-03-converting-dynos" target="_blank">
+                        <a href="https://code-institute-students.github.io/deployment-docs/01-heroku-signup/heroku-03-converting-dynos"
+                            target="_blank">
                             Convert your Heroku apps to eco-dynos</a>
                     </label>
                 </div>
-                <p class="herokuTasksInfoText mt-3 d-none"><small>This checklist is for informational use only. Code Institute does not record this data or check it.
-                    It is your responsibility to ensure that you have completed all the steps before November 28th.</small></p>
+                <p class="herokuTasksInfoText mt-3 d-none"><small>This checklist is for informational use only. Code
+                        Institute does not record this data or check it.
+                        It is your responsibility to ensure that you have completed all the steps before November
+                        28th.</small></p>
             </div>
         </div>
     </div>
