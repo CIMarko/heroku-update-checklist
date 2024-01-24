@@ -26,7 +26,7 @@ function handleCourseForm(event) {
     } else if (course === "BC") {
         showActionResult();
         disableCourseForm();
-        document.getElementById("signUpGSPWrapper").classList.remove("d-none");
+        document.getElementById("signUpGSPBCWrapper").classList.remove("d-none");
         document.getElementById("signUpHerokuCreditsWrapper").classList.remove("d-none");
         document.getElementById("convertDynosWrapper").classList.remove("d-none");
     } else {
