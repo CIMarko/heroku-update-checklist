@@ -23,6 +23,12 @@ function handleCourseForm(event) {
     } else if (course === "5P") {
         P5CoursePositionForm.classList.remove("d-none");
         disableCourseForm();
+    } else if (course === "BC") {
+        showActionResult();
+        disableCourseForm();
+        document.getElementById("signUpGSPWrapper").classList.remove("d-none");
+        document.getElementById("signUpHerokuCreditsWrapper").classList.remove("d-none");
+        document.getElementById("convertDynosWrapper").classList.remove("d-none");
     } else {
         document.getElementById("courseFormFeedback").innerHTML = "Please select a course";
     }
