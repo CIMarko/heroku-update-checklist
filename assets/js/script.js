@@ -55,9 +55,10 @@ function handle4PCoursePositionForm(event) {
         document.getElementById("signUpGSPWrapper").classList.remove("d-none");
         document.getElementById("actionResult").classList.remove("d-none");
     } else if (P4CoursePosition === "submittedMS2" || P4CoursePosition === "submittedMS3" || P4CoursePosition === "submittedMS4") {
-        disableP4CoursePositionForm();
-
-        document.getElementById("signUpGSPWrapper").classList.remove("d-none");
+        //disableP4CoursePositionForm();
+        showActionResult();
+        //disableCourseForm();
+        document.getElementById("signUpGSPBCWrapper").classList.remove("d-none");
         document.getElementById("signUpHerokuCreditsWrapper").classList.remove("d-none");
         document.getElementById("convertDynosWrapper").classList.remove("d-none");
 
@@ -67,7 +68,6 @@ function handle4PCoursePositionForm(event) {
         }
 
         showHerokuTasksInfoText();
-        document.getElementById("MS3DatabaseTypeForm").classList.remove("d-none");
     } else {
         document.getElementById("P4CoursePositionFormFeedback").innerHTML = "Please select your position in the 4P course course";
     }
@@ -239,7 +239,6 @@ function resetForm() {
 /* Event listeners */
 courseForm.addEventListener("submit", handleCourseForm);
 P4CoursePositionForm.addEventListener("submit", handle4PCoursePositionForm);
-MS3DatabaseTypeForm.addEventListener("submit", handleMS3DatabaseType);
 P5CoursePositionForm.addEventListener("submit", handleP5CoursePositionForm);
 supportBtn.addEventListener("click", showSupportInfo);
 resetBtn.addEventListener("click", resetForm);
