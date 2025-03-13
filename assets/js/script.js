@@ -63,7 +63,6 @@ function handle4PCoursePositionForm(event) {
         document.getElementById("convertDynosWrapper").classList.remove("d-none");
 
         if (P4CoursePosition === "submittedMS3" || P4CoursePosition === "submittedMS4") {
-            document.getElementById("signUpElephantSQLWrapper").classList.remove("d-none");
             document.getElementById("migrateMS4Wrapper").classList.remove("d-none");
         }
 
@@ -130,8 +129,7 @@ function handleMS3DatabaseType(event) {
     let form = event.target;
     let MS3DatabaseType = form.selectMS3DatabaseType.value;
     if (MS3DatabaseType === "MS3Postgres" || MS3DatabaseType === "MS3PostgresAndMongoDB") {
-        disableMS3DatabaseTypeForm();
-        document.getElementById("signUpElephantSQLWrapper").classList.remove("d-none");
+        disableMS3DatabaseTypeForm();;
         document.getElementById("migrateMS3Wrapper").classList.remove("d-none");
         showHerokuTasksInfoText();
         showActionResult();
